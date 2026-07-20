@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise 🎂</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="background">
+        <span class="balloon"></span>
+        <span class="balloon"></span>
+        <span class="balloon"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+    </div>
+
+    <!-- =======================
+         Screen 1
+    ======================== -->
+    <section class="screen active" id="screen1">
+        <div class="card">
+            <h1>Happy Birthday 🎉</h1>
+            <p>Today is all about celebrating you.</p>
+            <button id="startBtn">Start Surprise</button>
+        </div>
+    </section>
+
+    <!-- =======================
+         Screen 2
+    ======================== -->
+    <section class="screen" id="screen2">
+        <div class="card">
+            <div class="gift-container">
+                <div class="gift">🎁</div>
+            </div>
+            <h2>A Little Surprise</h2>
+            <button id="giftBtn">Open Gift</button>
+            <div class="hidden" id="giftMessage">
+                🎁 Premium gift? Nope. 😅 <br>
+                Premium birthday wishes? Absolutely! 🎉
+                <br>
+                <button id="continue1">Continue →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================
+         Screen 3
+    ======================== -->
+    <section class="screen" id="screen3">
+        <div class="card">
+            <div class="envelope">💌</div>
+            <button id="letterBtn">Read Letter</button>
+            <div class="letter hidden" id="letter">
+                <p id="typingText"></p>
+                <button id="continue2">Continue →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================
+         Screen 4
+    ======================== -->
+    <section class="screen" id="screen4">
+        <div class="card">
+            <div class="cake">🕯️🕯️🕯️<br>🎂</div>
+            <button id="blowBtn">Blow Candles</button>
+            <button class="hidden" id="continue3">Continue →</button>
+        </div>
+    </section>
+
+    <!-- =======================
+         Screen 5
+    ======================== -->
+    <section class="screen" id="screen5">
+        <div class="card">
+            <h2>Hope all your wishes come true ✨</h2>
+            <button id="celebrateBtn">Celebrate 🎉</button>
+            <button class="hidden" id="continue4">Finish →</button>
+        </div>
+    </section>
+
+    <!-- =======================
+         Screen 6
+    ======================== -->
+    <section class="screen" id="screen6">
+        <div class="card">
+            <h2>Thank You ❤️</h2>
+            <p>May this year bring you happiness, peace, success and countless beautiful moments.</p>
+            <small>Made with ❤️</small>
+        </div>
+    </section>
+
+    <!-- Confetti -->
+    <div id="confetti"></div>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>

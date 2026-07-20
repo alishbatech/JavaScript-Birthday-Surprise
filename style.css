@@ -1,0 +1,534 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ :root {
+     --pink: #ff5ea8;
+     --lightPink: #fd97c8;
+     --purple: #9471ff;
+     --cream: #fef1df;
+     --white: #ffffff;
+     --text: #343434;
+     --shadow: rgba(0, 0, 0, .15);
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+     background: linear-gradient(135deg, #fcc5df, #e0bcfc, #faebca);
+ }
+
+ /* ===========================
+           BACKGROUND
+=========================== */
+
+ .background {
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     overflow: hidden;
+     z-index: -1;
+ }
+
+ /* Balloons */
+ .balloon {
+     position: absolute;
+     width: 70px;
+     height: 90px;
+     background: var(--lightPink);
+     border-radius: 50%;
+     animation: float 12s linear infinite;
+ }
+
+ .balloon::after {
+     content: "";
+     position: absolute;
+     width: 2px;
+     height: 80px;
+     background: #727272;
+     left: 50%;
+     top: 90px;
+ }
+
+ .balloon:nth-child(1) {
+     left: 8%;
+     animation-delay: 0s;
+ }
+
+ .balloon:nth-child(2) {
+     left: 48%;
+     background: #c898fc;
+     animation-delay: 2s;
+ }
+
+ .balloon:nth-child(3) {
+     right: 8%;
+     animation-delay: 4s;
+ }
+
+ /* Stars */
+ .star {
+     position: absolute;
+     width: 8px;
+     height: 8px;
+     background: #f9f901;
+     border-radius: 50%;
+     box-shadow: 0 0 15px gold;
+     animation: twinkle 2s infinite;
+ }
+
+ .star:nth-child(4) {
+     left: 20%;
+     top: 20%;
+ }
+
+ .star:nth-child(5) {
+     right: 20%;
+     top: 30%;
+ }
+
+ .star:nth-child(6) {
+     left: 60%;
+     bottom: 20%;
+ }
+ .star:nth-child(7) {
+     right: 80%;
+     bottom: 30%;
+ }
+
+ /* ===========================
+           SCREEN
+  =========================== */
+
+ .screen {
+     position: absolute;
+     inset: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     opacity: 0;
+     visibility: hidden;
+     transition: .7s;
+ }
+
+ .screen.active {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ /* ===========================
+           CARD
+  =========================== */
+
+ .card {
+     width: 90%;
+     max-width: 520px;
+     background: rgba(255, 255, 255, .35);
+     backdrop-filter: blur(20px);
+     border: 1px solid rgba(255, 255, 255, .4);
+     border-radius: 30px;
+     padding: 40px;
+     text-align: center;
+     box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+     animation: cardShow .8s;
+ }
+
+ .card h1 {
+     font-family: 'Pacifico', cursive;
+     font-size: 3.2rem;
+     color: var(--pink);
+     margin-bottom: 15px;
+ }
+
+ .card h2 {
+     color: var(--purple);
+     margin: 20px 0;
+ }
+
+ .card p {
+     color: var(--text);
+     line-height: 1.8;
+     margin-bottom: 20px;
+ }
+
+ /* ===========================
+           BUTTONS
+        =========================== */
+
+ button {
+     border: none;
+     outline: none;
+     padding: 15px 35px;
+     border-radius: 40px;
+     cursor: pointer;
+     background: linear-gradient(135deg, var(--pink), var(--purple));
+     color: white;
+     font-size: 1rem;
+     font-weight: 600;
+     transition: .35s;
+     box-shadow: 0 8px 25px rgba(255, 94, 168, .35);
+ }
+
+ button:hover {
+     transform: translateY(-5px) scale(1.05);
+     box-shadow: 0 15px 30px rgba(255, 94, 168, .45);
+ }
+
+ button:active {
+     transform: translateY(-2px) scale(1.02);
+ }
+
+ /* ===========================
+           HIDDEN
+        =========================== */
+
+ .hidden {
+     display: none;
+ }
+
+ /* ===========================
+           ANIMATIONS
+        =========================== */
+
+ @keyframes float {
+     0% {
+         transform: translateY(110vh);
+     }
+
+     100% {
+         transform: translateY(-120px);
+     }
+ }
+
+ @keyframes twinkle {
+
+     0%,
+     100% {
+         opacity: .3;
+         transform: scale(.8);
+     }
+
+     50% {
+         opacity: 1;
+         transform: scale(1.4);
+     }
+ }
+
+ @keyframes cardShow {
+     from {
+         opacity: 0;
+         transform: translateY(40px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes giftShake {
+
+     0%,
+     100% {
+         transform: rotate(0);
+     }
+
+     20% {
+         transform: rotate(-6deg);
+     }
+
+     40% {
+         transform: rotate(6deg);
+     }
+
+     60% {
+         transform: rotate(-4deg);
+     }
+
+     80% {
+         transform: rotate(4deg);
+     }
+ }
+
+ @keyframes floatLetter {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-12px);
+     }
+ }
+
+ @keyframes cakeBounce {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-10px);
+     }
+ }
+
+ @keyframes fadeUp {
+     from {
+         opacity: 0;
+         transform: translateY(30px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes blowCandles {
+     0% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0;
+         transform: translateY(-100px);
+     }
+ }
+
+ @keyframes pop {
+     0% {
+         transform: scale(1);
+         opacity: 1;
+     }
+
+     100% {
+         transform: scale(0);
+         opacity: 0;
+     }
+ }
+
+ /* ===========================
+           GIFT SECTION
+        =========================== */
+
+ .gift-container {
+     position: relative;
+     display: inline-block;
+     margin: 20px 0;
+ }
+
+ .gift {
+     font-size: 6rem;
+     display: inline-block;
+     cursor: pointer;
+     animation: giftShake 2s infinite;
+     transition: .4s;
+ }
+
+ .gift:hover {
+     transform: scale(1.15) rotate(-8deg);
+ }
+
+ .gift.opening {
+     animation: giftOpen .6s ease-out forwards;
+ }
+
+ .gift-lid {
+     position: absolute;
+     font-size: 3rem;
+     top: -30px;
+     left: 50%;
+     transform: translateX(-50%);
+     animation: lidFly .8s ease-out forwards;
+ }
+
+ .gift-shine {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     pointer-events: none;
+     animation: shine .6s ease-out;
+ }
+
+ #giftMessage {
+     margin-top: 25px;
+     padding: 20px;
+     border-radius: 20px;
+     background: rgba(255, 255, 255, .55);
+     backdrop-filter: blur(10px);
+     animation: fadeUp .8s;
+ }
+
+ #continue1 {
+     margin-top: 20px;
+ }
+
+ @keyframes giftOpen {
+     0% {
+         transform: scale(1) rotateY(0deg);
+     }
+
+     50% {
+         transform: scale(1.1) rotateY(15deg);
+     }
+
+     100% {
+         transform: scale(0.9) rotateY(0deg);
+     }
+ }
+
+ @keyframes lidFly {
+     0% {
+         transform: translateX(-50%) translateY(0) rotate(0deg);
+         opacity: 1;
+     }
+
+     100% {
+         transform: translateX(-50%) translateY(-80px) rotate(-30deg);
+         opacity: 0;
+     }
+ }
+
+ @keyframes shine {
+     0% {
+         opacity: 1;
+         transform: scaleX(0);
+     }
+
+     100% {
+         opacity: 0;
+         transform: scaleX(1);
+     }
+ }
+
+ .spark {
+     position: absolute;
+     pointer-events: none;
+ }
+
+ /* ===========================
+           LETTER
+        =========================== */
+
+ .envelope {
+     font-size: 5.5rem;
+     cursor: pointer;
+     transition: .4s;
+     animation: floatLetter 3s ease-in-out infinite;
+ }
+
+ .envelope:hover {
+     transform: scale(1.1);
+ }
+
+ .letter {
+     margin-top: 25px;
+     background: white;
+     padding: 25px;
+     border-radius: 20px;
+     box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+     text-align: left;
+     animation: fadeUp .8s;
+ }
+
+ #typingText {
+     line-height: 1.8;
+     color: #444;
+     min-height: 220px;
+ }
+
+ #continue2 {
+     margin-top: 20px;
+     width: 100%;
+ }
+
+ /* ===========================
+           CAKE
+        =========================== */
+
+ .cake {
+     font-size: 5rem;
+     line-height: 1.2;
+     margin: 20px 0;
+     animation: cakeBounce 2s infinite;
+ }
+
+ #blowBtn {
+     margin-top: 15px;
+ }
+
+ #continue3 {
+     margin-top: 20px;
+ }
+
+ /* ===========================
+           CONFETTI
+        =========================== */
+
+ #confetti {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     z-index: 1000;
+ }
+
+ .confetti-piece {
+     position: absolute;
+     width: 10px;
+     height: 10px;
+     background: var(--pink);
+     pointer-events: none;
+ }
+
+ /* ===========================
+           RESPONSIVE
+        =========================== */
+
+ @media(max-width:768px) {
+     .card {
+         padding: 30px 20px;
+     }
+
+     .card h1 {
+         font-size: 2.5rem;
+     }
+
+     .card h2 {
+         font-size: 1.5rem;
+     }
+
+     button {
+         width: 100%;
+     }
+
+     .gift {
+         font-size: 4rem;
+     }
+
+     .envelope {
+         font-size: 3.5rem;
+     }
+
+     .cake {
+         font-size: 3rem;
+     }
+ }
+
+ small {
+     display: block;
+     margin-top: 20px;
+     color: #888;
+ }
