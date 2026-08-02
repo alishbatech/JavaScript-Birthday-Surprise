@@ -83,7 +83,7 @@ Birthday-Surprise/
 
 1. Clone this repository:
 
-git clone YOUR_REPOSITORY_LINK
+https://github.com/alishbatech/JavaScript-Birthday-Surprise
 
 2. Open the project folder in VS Code.
 
