@@ -106,4 +106,6 @@ A simple birthday website turned into an interactive little surprise with:
 ---
 ### Author
 
+ - Alishba Shahid
+
 Made with ❤️ using HTML, CSS & JavaScript.
