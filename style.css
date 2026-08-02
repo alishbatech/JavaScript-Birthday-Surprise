@@ -6,7 +6,7 @@
 
  :root {
      --pink: #ff5ea8;
-     --lightPink: #fd97c8;
+     --lightPink: #fd99c9;
      --purple: #9471ff;
      --cream: #fef1df;
      --white: #ffffff;
@@ -63,7 +63,7 @@
 
  .balloon:nth-child(2) {
      left: 48%;
-     background: #c898fc;
+     background: #c996ff;
      animation-delay: 2s;
  }
 
